@@ -1,11 +1,11 @@
 CREATE TABLE spot(
    id        INTEGER  NOT NULL PRIMARY KEY 
-  ,name      VARCHAR(31) NOT NULL
+  ,name      text
   ,area      INTEGER  NOT NULL
   ,cat       INTEGER 
-  ,time      VARCHAR(5)
-  ,lon       NUMERIC(11,8) NOT NULL
-  ,lat       NUMERIC(11,7) NOT NULL
+  ,time      time
+  ,lon       float
+  ,lat       float
   ,location1 point
   ,location2 geography(Point, 4326)
 );
