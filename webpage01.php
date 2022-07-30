@@ -16,7 +16,7 @@
     <form id="categoryform" action="./webpage01.php" method="POST">
         <!--メインカテゴリー選択-->
         <div class="form-group">
-            <label for="exampleFormControlSelect1">メインカテゴリー</label>
+            <!--<label for="exampleFormControlSelect1">メインカテゴリー</label>
             <select name="選択肢" class="form-control" id="exampleFormControlSelect1">
                 <option selected value="指定なし">指定なし</option>
                 <option value="伝統工芸品">伝統工芸品</option>
@@ -27,6 +27,17 @@
                 <option value="6">和楽器</option>
                 <option value="7">その他の伝統文化</option>
                 <option value="8">観光</option>
+            </select>-->
+            <label for="exampleFormControlSelect1">カテゴリー</label>
+            <select name="選択肢" class="form-control" id="exampleFormControlSelect1">
+                <option selected value="指定なし">指定なし</option>
+                <option value="1">アトラクション</option>
+                <option value="2">ショー・パレード</option>
+                <option value="3">グリーティング</option>
+                <option value="4">レストラン</option>
+                <option value="5">ワゴン</option>
+                <option value="6">ショップ</option>
+                <option value="7">トイレ</option>
             </select>
         <!-- </div> -->
         <!-- サブカテゴリー選択
