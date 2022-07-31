@@ -24,11 +24,10 @@ crossorigin=""></script>
 <body>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CCCCFF;"> -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href=https://muds.gdl.jp/~s2022054/disney_nav.php>Disney Navigator</a>
+                    <a class="nav-link" href=https://muds.gdl.jp/~s20220/disney_nav.php>Disney Navigator</a>
                 </li>
             </ul>
         </div>
@@ -125,7 +124,7 @@ crossorigin=""></script>
         if (isset($_POST['lng'])){$lng=$_POST['lng'];}
         if (isset($_POST['pname'])){$pname=$_POST['pname'];}
         if (isset($pname)){
-        $dbconn = pg_connect("host=localhost dbname=s2022054 user=s2022054 password=QWbFwLfQ")
+        $dbconn = pg_connect("host=localhost dbname=s20220 user=s20220 password=XXXXXXXX")
         or die('Could not connect: ' . pg_last_error());
         $query="select avg(lat),avg(lon) from spot where cat = ' " .$pname . "';";
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
