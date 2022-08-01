@@ -179,7 +179,7 @@ crossorigin=""></script>
         $query="select spot.id,spot.name,category.cname,spot.lat,spot.lon, spot.location from spot, category where spot.cat = category.id and spot.cat = ' " .$pname . "' OFFSET 0 LIMIT 5;";
         $result = pg_query($query) or die('Query failed: ' . pg_last_error());
         while ($line = pg_fetch_array($result)) {
-        echo "L.marker([$line[4], $line[3]]).addTo(map); ";
+        echo "L.marker([$line[4], $line[3]]).addTo(map).bindPopup('$line[1]'); ";
         }
         ?>
         </script>
