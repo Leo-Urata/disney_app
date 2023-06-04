@@ -131,8 +131,8 @@ crossorigin=""></script>
         $line = pg_fetch_array($result);
         $avglat=$line[1];
         $avglon=$line[0];
-        $query="select spot.id, spot.name, category.cname, spot.lat, spot.lon, spot.location, spot.location<->point'($lng,$lat)' as distance from spot, category where spot.cat = category.id and spot.cat = ' " .$pname . "' order by distance OFFSET 0 LIMIT 5;";
-        $result = pg_query($query) or die('Query failed: ' . pg_last_error());
+        $result = pg_prepare($dbconn, "my_query", "select spot.id, spot.name, category.cname, spot.lat, spot.lon, spot.location, spot.location<->point'($lng,$lat)' as distance from spot, category where spot.cat = category.id and spot.cat = $1 order by distance OFFSET 0 LIMIT 5;");
+        $result = pg_execute($dbconn, "my_query", array($pname)) or die('Query failed: ' . pg_last_error());
         echo "<h2 class='ml-3' id='here'>現在地から近いスポット</h2>";
         echo "<table class='table table-striped m-3'>\n";
         while ($line = pg_fetch_array($result)) {
